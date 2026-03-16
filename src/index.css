@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Sansita:wght@400;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-commons: "TT Commons Pro", "Plus Jakarta Sans", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-body-serif: "Libre Baskerville", serif;
+  --font-script: "TT Commons Pro", "Plus Jakarta Sans", sans-serif;
+  --font-italic: "TT Commons Pro", "Plus Jakarta Sans", sans-serif;
+  --font-sansita: "Sansita", sans-serif;
+  --font-arial: "Arial", sans-serif;
+  
+  --color-primary: #ffed00;
+  --color-terracotta: #c47c44;
+  --color-cream: #f6f5f2;
+  --color-paper: #0a0a0a;
+  --color-ink: #f6f5f2;
+  --color-card-text: #e0deda;
+  --color-library-gold: #d4af37;
+  --color-library-deep: #1a1a1a;
+}
+
+.bg-custom-bg {
+  background-image: url('https://picsum.photos/seed/hanoi/1920/1080');
+  background-size: cover;
+  background-position: center;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-ink bg-paper font-medium;
+  }
+  h1 { @apply font-serif text-white text-[4.5rem] leading-[0.85] tracking-tighter; }
+  h2 { @apply font-serif text-white text-[3rem] leading-[0.95] tracking-tight; }
+  h3 { @apply font-serif text-white text-[2rem] leading-[1.1]; }
+  h4 { @apply font-serif text-white text-[1.5rem] leading-[1.2]; }
+  h5 { @apply font-serif text-white text-[1.25rem] leading-[1.2]; }
+  h6 { @apply font-serif text-white text-[1.1rem] leading-[1.2]; }
+}
+
+.paper-texture {
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  background-color: rgba(246, 245, 242, 0.05);
+  background-blend-mode: overlay;
+}
+
+.markdown-body {
+  @apply font-body-serif leading-relaxed text-card-text text-[1rem];
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply font-serif mt-8 mb-4 text-primary font-bold;
+}
+
+.markdown-body p {
+  @apply mb-5 font-normal opacity-90;
+}
+
+.markdown-body strong {
+  @apply font-bold text-primary;
+}
+
+.markdown-body ul {
+  @apply list-disc pl-6 mb-5 space-y-2;
+}
+
+.markdown-body ol {
+  @apply list-decimal pl-6 mb-5 space-y-2;
+}
+
+.library-card {
+  @apply bg-library-deep/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300;
+}
+
+.library-card:hover {
+  @apply border-primary/30 shadow-primary/5;
+}
+
+.gold-border {
+  border: 1px solid var(--color-library-gold);
+}
